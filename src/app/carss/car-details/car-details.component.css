@@ -1,0 +1,131 @@
+body {
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.car-details {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  max-width: 960px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+/* Title */
+.car-details h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+/* Centered Image Container */
+.car-images-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Images Grid */
+.car-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+}
+
+/* Image Styling */
+.car-images img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.car-images img:hover {
+  transform: scale(1.05);
+}
+
+/* Details Info */
+.car-details-info {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.car-details-info p {
+  background: #f9fafb;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-left: 6px solid #007bff;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.car-details-info .icon {
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+/* Specific icons colors */
+.release-date .icon {
+  color: #007bff;
+}
+.location .icon {
+  color: #6c757d;
+}
+.price .icon {
+  color: #28a745;
+}
+
+/* Edit Link */
+.edit-icon {
+  display: inline-block;
+  margin-top: 25px;
+  font-size: 1.1rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.edit-icon i {
+  margin-right: 8px;
+}
+
+.edit-icon:hover {
+  color: #fff;
+  background-color: #007bff;
+  transform: translateY(-2px);
+  border-color: #007bff;
+}
+
+/* Error / Loading */
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px;
+  border-radius: 6px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.loading {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  margin-top: 40px;
+}

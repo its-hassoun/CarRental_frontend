@@ -1,0 +1,44 @@
+<section class="locations-section">
+    <div class="container">
+      <div class="title">
+        <h1>Rent a Car</h1>
+        <p>Choose your dates and calculate the rental amount</p>
+      </div>
+  
+      <div class="form">
+        <div class="input-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" [(ngModel)]="startDate" [min]="today" />
+        </div>
+  
+        <div class="input-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" [(ngModel)]="endDate" [min]="startDate || today" />
+        </div>
+  
+        <!-- Hide the "Calculate Amount" button only after "Rent Now" is clicked -->
+        <button *ngIf="!isRenting" (click)="calculateAmount()" class="calculate-btn">Calculate Amount</button>
+  
+        <!-- Display error message -->
+        <div *ngIf="errorMessage" class="error-message">
+          <p>{{ errorMessage }}</p>
+        </div>
+  
+        <!-- Display success message -->
+        <div *ngIf="successMessage" class="success-message">
+          <p>{{ successMessage }}</p>
+        </div>
+  
+        <!-- Show the total amount -->
+        <div *ngIf="showAmount" class="amount-display">
+          <p>Total Amount: {{ totalAmount }} TND</p>
+        </div>
+  
+        <!-- Rent Now button -->
+        <button *ngIf="showAmount" (click)="rentCar()" class="rent-now-btn">
+          Rent Now
+        </button>
+      </div>
+    </div>
+  </section>
+  

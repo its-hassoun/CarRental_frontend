@@ -1,0 +1,126 @@
+<body>
+  <section class="register-section">
+    <div class="register-header">
+      <img src="/assets/images/user.jpg" class="user-logo" alt="User Image">
+      <div class="center-content">
+        <h2>Create an Account</h2>
+      </div>
+    </div>
+  <div class="card">
+      <div class="card-left">
+          <img src="/assets/images/reg.jpg" class="brand-logo" alt="Car Rental Logo">
+      </div>
+      <div class="card-right">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+              <label for="name">Full Name</label>
+              <div class="input-container">
+              <i class="fas fa-user input-icon"></i>
+              <input type="text" id="name" formControlName="name" placeholder="John Doe"
+                     [class.is-invalid]="registerForm.get('name')?.invalid && submitted">
+                    </div>
+              <div *ngIf="registerForm.get('name')?.invalid && submitted" class="invalid-feedback">
+                  <div *ngIf="registerForm.get('name')?.errors?.['required']">Name is required</div>
+                  <div *ngIf="registerForm.get('name')?.errors?.['minlength']">Minimum 3 characters</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="age">Age</label>
+              <div class="input-container">
+              <i class="fas fa-calendar-alt input-icon"></i>
+              <input type="number" id="age" formControlName="age" placeholder="25"
+                     [class.is-invalid]="registerForm.get('age')?.invalid && submitted">
+                    </div>
+              <div *ngIf="registerForm.get('age')?.invalid && submitted" class="invalid-feedback">
+                  <div *ngIf="registerForm.get('age')?.errors?.['required']">Age is required</div>
+                  <div *ngIf="registerForm.get('age')?.errors?.['min']">You must be at least 21 years old</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-container">
+              <i class="fas fa-envelope input-icon"></i>
+              <input type="email" id="email" formControlName="email" placeholder="name@example.com"
+                     [class.is-invalid]="registerForm.get('email')?.invalid && submitted">
+                    </div>
+              <div *ngIf="registerForm.get('email')?.invalid && submitted" class="invalid-feedback">
+                  <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</div>
+                  <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</div>
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label for="governorate">Governorate</label>
+            <div class="input-container">
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <select id="governorate" formControlName="governorate"
+                      [class.is-invalid]="registerForm.get('governorate')?.invalid && submitted">
+                <option value="" disabled selected>Select a governorate</option>
+                <option value="Ariana">Ariana</option>
+                <option value="Béja">Béja</option>
+                <option value="Ben Arous">Ben Arous</option>
+                <option value="Bizerte">Bizerte</option>
+                <option value="Gabès">Gabès</option>
+                <option value="Gafsa">Gafsa</option>
+                <option value="Jendouba">Jendouba</option>
+                <option value="Kairouan">Kairouan</option>
+                <option value="Kasserine">Kasserine</option>
+                <option value="Kébili">Kébili</option>
+                <option value="Kef">Kef</option>
+                <option value="Mahdia">Mahdia</option>
+                <option value="Manouba">Manouba</option>
+                <option value="Médenine">Médenine</option>
+                <option value="Monastir">Monastir</option>
+                <option value="Nabeul">Nabeul</option>
+                <option value="Sfax">Sfax</option>
+                <option value="Sidi Bouzid">Sidi Bouzid</option>
+                <option value="Siliana">Siliana</option>
+                <option value="Sousse">Sousse</option>
+                <option value="Tataouine">Tataouine</option>
+                <option value="Tozeur">Tozeur</option>
+                <option value="Tunis">Tunis</option>
+                <option value="Zaghouan">Zaghouan</option>
+              </select>
+            </div>
+            <div *ngIf="registerForm.get('governorate')?.invalid && submitted" class="invalid-feedback">
+              <div *ngIf="registerForm.get('governorate')?.errors?.['required']">Governorate is required</div>
+            </div>
+          </div>
+          
+          
+
+          <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-container">
+              <i class="fas fa-lock input-icon"></i>
+              <input [type]="passwordVisible ? 'text' : 'password'" id="password" formControlName="password"
+                     placeholder="••••••••" [class.is-invalid]="registerForm.get('password')?.invalid && submitted">
+              <i class="fas fa-eye password-toggle" (click)="togglePassword('password')" style="cursor: pointer;"></i>
+            </div>
+              <div *ngIf="registerForm.get('password')?.invalid && submitted" class="invalid-feedback">
+                  <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</div>
+                  <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Minimum 8 characters</div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-container">
+              <i class="fas fa-lock input-icon"></i>
+              <input [type]="confirmPasswordVisible ? 'text' : 'password'" id="confirmPassword"
+                     formControlName="confirmPassword" placeholder="••••••••"
+                     [class.is-invalid]="registerForm.get('confirmPassword')?.invalid && submitted ||
+                                        registerForm.errors?.['mismatch'] && submitted">
+              <i class="fas fa-eye password-toggle" (click)="togglePassword('confirmPassword')" style="cursor: pointer;"></i>
+            </div>
+              <div *ngIf="(registerForm.get('confirmPassword')?.invalid && submitted) || (registerForm.errors?.['mismatch'] && submitted)" class="invalid-feedback">
+                  <div *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">Confirmation password is required</div>
+                  <div *ngIf="registerForm.errors?.['mismatch']">Passwords do not match</div>
+              </div>
+          </div>
+
+          <button type="submit" class="btn">Create Account</button>
+        </form>
+      </div>
+  </div>
+</section>
+</body>

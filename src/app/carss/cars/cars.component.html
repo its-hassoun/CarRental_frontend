@@ -1,0 +1,74 @@
+<div class="cars-client-style">
+  <h1>Our Available Cars</h1>
+
+  <!-- Filters for CLIENT -->
+  <div *ngIf="userRole === 'CLIENT'" class="filters">
+    <input
+      type="text"
+      placeholder="Search by brand"
+      [(ngModel)]="nameFilter"
+      (input)="applyFilters()"
+    />
+
+    <select [(ngModel)]="governorateFilter" (change)="applyFilters()">
+      <option value="">All Governorates</option>
+      <option *ngFor="let gov of tunisianGovernorates" [value]="gov">{{ gov }}</option>
+    </select>
+
+    <input
+      type="number"
+      placeholder="Min Price"
+      [(ngModel)]="minPrice"
+      (input)="applyFilters()"
+    />
+    <input
+      type="number"
+      placeholder="Max Price"
+      [(ngModel)]="maxPrice"
+      (input)="applyFilters()"
+    />
+  </div>
+
+  <!-- Buttons for CLIENT and AGENCE -->
+  <div class="top-buttons">
+    <button *ngIf="userRole === 'CLIENT'" class="my-location-btn" (click)="showMyLocationCars()">
+      My Location Cars
+    </button>
+
+    <button *ngIf="userRole === 'AGENCE'" class="my-location-btn" (click)="showLocationCarsAgency()">
+      My Location Cars
+    </button>
+
+    <a *ngIf="userRole === 'AGENCE'" href="/addCar" class="add-btn">+</a>
+  </div>
+
+  <!-- Cars Grid -->
+  <div class="cars-grid">
+    <div *ngFor="let car of filteredCars">
+      <div class="car-card">
+        <img
+          [src]="'http://localhost:9999/' + car.imageUrls[0]"
+          class="car-img"
+          alt="{{ car.brand }} {{ car.model }}"
+          [routerLink]="['/car', car.id]"
+        />
+
+        <div class="car-info">
+          <h3>{{ car.brand }} {{ car.model }}</h3>
+          <p><i class="fas fa-map-marker-alt"></i> {{ car.gov }}</p>
+          <p class="price">{{ car.pricePerDay }} TND/day</p>
+          <p class="availability" [ngClass]="{ 'available': car.av, 'not-available': !car.av }">
+            {{ car.av ? 'Available' : 'Not Available' }}
+          </p>
+
+          <button
+            *ngIf="userRole === 'CLIENT' && car.av"
+            class="rent-now-btn"
+            (click)="rentCar(car.id, car.pricePerDay)">
+            Rent Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

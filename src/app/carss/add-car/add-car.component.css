@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .form-container {
+    max-width: 600px;
+    margin: 60px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  form input:focus {
+    outline: none;
+    border-color: #ff6600;
+  }
+  
+  form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff6600;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  form button:hover {
+    background-color: #cc5500;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .toast {
+    position: fixed;
+    top: 20px;
+    right: -400px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    animation: slideIn 0.6s forwards;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  
+  .toast.success {
+    background-color: #28a745;
+  }
+  
+  .toast.error {
+    background-color: #dc3545;
+  }
+  
+  @keyframes slideIn {
+    from {
+      right: -400px;
+      opacity: 0;
+    }
+    to {
+      right: 20px;
+      opacity: 1;
+    }
+  }
+  

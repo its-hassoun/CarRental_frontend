@@ -1,0 +1,24 @@
+<div class="location-cars-agency">
+    <h1>Your Rented Cars</h1>
+  
+    <div *ngIf="locations.length === 0" class="no-data">
+      <p>No cars found for your locations.</p>
+    </div>
+  
+    <div class="cars-grid">
+      <div *ngFor="let location of locations">
+        <ng-container *ngIf="location.car">
+          <div class="car-card">
+            <img [src]="location.car.imageUrls?.length ? 'http://localhost:9999/' + location.car.imageUrls[0] : 'assets/default-car.jpg'"
+            class="car-img" />  
+            <div class="car-info">
+              <h3>{{ location.car.brand }} {{ location.car.model }}</h3>
+              <p><i class="fas fa-map-marker-alt"></i> {{ location.car.gov }}</p>
+              <p><strong>From:</strong> {{ location.startDate }} <strong>to</strong> {{ location.endDate }}</p>
+              <p><strong>Price/Day:</strong> <span class="price">{{ location.car.pricePerDay }} TND</span></p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+</div>

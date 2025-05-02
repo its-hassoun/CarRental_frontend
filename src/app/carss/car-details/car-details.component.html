@@ -1,0 +1,37 @@
+<body>
+  <section class="car-details" *ngIf="car">
+    <h2>{{ car.brand }} {{ car.model }}</h2>
+
+    <!-- Images affichées côte à côte et centrées -->
+    <div class="car-images-container" *ngIf="car.imageUrls?.length">
+      <div class="car-images">
+        <img *ngFor="let img of car.imageUrls" [src]="'http://localhost:9999/' + img" [alt]="car.brand" />
+      </div>
+    </div>
+
+    <!-- Car Details -->
+    <div class="car-details-info">
+      <p class="release-date">
+        <i class="fas fa-calendar-alt icon"></i>
+        <strong>Release Date:</strong> {{ car.releaseDate }}
+      </p>
+      <p class="location">
+        <i class="fas fa-map-marker-alt icon"></i>
+        <strong>Location:</strong> {{ car.gov }}
+      </p>
+      <p class="price">
+        <i class="fas fa-money-bill-wave icon"></i>
+        <strong>Price per day:</strong> {{ car.pricePerDay }} TND
+      </p>
+    </div>
+
+    <!-- Edit Icon -->
+    <a *ngIf="userRole === 'AGENCE'" [routerLink]="['/updateCar', car.id]" class="edit-icon">
+      <i class="fas fa-edit"></i> Edit Car Details
+    </a>
+  </section>
+
+  <!-- Error and Loading -->
+  <div *ngIf="error" class="error">{{ error }}</div>
+  <div *ngIf="!car && !error" class="loading">Loading car details...</div>
+</body>

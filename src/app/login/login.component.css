@@ -1,0 +1,219 @@
+.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fc;
+  text-align: center;
+}
+
+
+
+.center-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  background: #ffffff;
+  width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(38, 37, 37, 0.1);
+  overflow: hidden;
+}
+
+.card-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.brand-logo {
+  max-width: 100%;
+  height: auto;
+  width: 450px;
+  height: 480px;
+  border-radius: 15px;
+}
+
+.card-right {
+  flex: 1;
+  padding: 40px;
+  text-align: left;
+  margin-top: 80px;
+}
+
+.form-group {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 80%;
+  padding: 12px 40px 12px 40px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f8f9fc;
+  outline: none;
+  padding-left: 45px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 65%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-icon, .password-toggle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
+  font-size: 16px;
+}
+
+.password-toggle:hover {
+  color: #007bff;
+}
+
+.password-toggle::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.btn {
+  width: 100%;
+  background: #ff6600;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: #e65c00;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #ff6600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+  color: #ff6600;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e65c00;
+  text-decoration: underline;
+}
+/* Dans login.component.css */
+.ng-invalid.ng-touched:not(form) {
+  border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.create-account {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px; /* Espacement supplémentaire avant le "Forgot Password" */
+}
+
+.create-account a {
+  font-weight: 500;
+  font-size: 15px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.create-account a:hover {
+  background-color: #fff2e6;
+  transform: translateY(-1px);
+}
+
+/* Error pop-up styles */
+.error-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #f44336; /* Red background for error */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000; /* Ensure the pop-up is above other elements */
+}
+
+.error-popup p {
+  margin: 0;
+}
+
+/* Success pop-up styles */
+.success-popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green background for success */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  z-index: 1000; /* Ensure the pop-up is above other elements */
+}
+
+.success-popup p {
+  margin: 0;
+}
+

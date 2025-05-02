@@ -1,0 +1,73 @@
+<section class="login-section">
+  <div class="center-content">
+    <h2>Welcome To Our App !</h2>
+  </div>
+  <div class="card">
+    <div class="card-left">
+      <img src="/assets/images/log.jpg" class="brand-logo" alt="Login Image">
+    </div>
+    <div class="card-right">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-container">
+            <i class="fas fa-envelope input-icon"></i>
+            <input
+              type="email"
+              id="email"
+              formControlName="email"
+              placeholder="name@example.com"
+              [class.is-invalid]="loginForm.get('email')?.invalid && submitted"
+            >
+          </div>
+          <div *ngIf="loginForm.get('email')?.invalid && submitted" class="invalid-feedback">
+            <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</div>
+            <div *ngIf="loginForm.get('email')?.errors?.['email']">Invalid email format</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-container">
+            <i class="fas fa-lock input-icon"></i>
+            <input
+              [type]="passwordVisible ? 'text' : 'password'"
+              id="password"
+              formControlName="password"
+              placeholder="••••••••"
+              [class.is-invalid]="loginForm.get('password')?.invalid && submitted"
+            >
+            <i
+              class="password-toggle"
+              [class.fa-eye]="!passwordVisible"
+              [class.fa-eye-slash]="passwordVisible"
+              (click)="togglePasswordVisibility()"
+            ></i>
+          </div>
+          <div *ngIf="loginForm.get('password')?.invalid && submitted" class="invalid-feedback">
+            <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</div>
+            <div *ngIf="loginForm.get('password')?.errors?.['minlength']">Minimum 8 characters</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Sign In</button>
+        <div class="create-account">
+          <a routerLink="/register">Create Account !</a>
+        </div>
+        <div class="forgot-password">
+          <a routerLink="/register">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Error Pop-up -->
+  <div *ngIf="showErrorPopup" class="error-popup">
+    <p>{{ loginError }}</p>
+  </div>
+
+  <!-- Success Pop-up -->
+  <div *ngIf="showSuccessPopup" class="success-popup">
+    <p>{{ successMessage }}</p>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+<div *ngIf="car; else loading" class="car-form-container">
+  <form (ngSubmit)="onSubmit()" class="car-form">
+    <h2>Update Car Details</h2>
+
+    <label for="brand">Brand</label>
+    <input type="text" id="brand" name="brand" [(ngModel)]="car.brand" required />
+
+    <label for="model">Model</label>
+    <input type="text" id="model" name="model" [(ngModel)]="car.model" required />
+
+    <label for="releaseDate">Release Date</label>
+    <input type="date" id="releaseDate" name="releaseDate" [(ngModel)]="car.releaseDate" required />
+
+    <label for="pricePerDay">Price/Day (TND)</label>
+    <input type="number" id="pricePerDay" name="pricePerDay" [(ngModel)]="car.pricePerDay" required />
+
+    <label for="images">Images (max 5)</label>
+    <input type="file" id="images" name="images" (change)="onImageChange($event)" multiple accept="image/*" />
+
+    <button type="submit">Update Car</button>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+  </form>
+</div>
+
+<ng-template #loading>
+  <p class="loading">Loading car data...</p>
+</ng-template>

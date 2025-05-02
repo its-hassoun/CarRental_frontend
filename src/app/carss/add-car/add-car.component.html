@@ -1,0 +1,30 @@
+<div class="form-container">
+  <h2>Ajouter une voiture</h2>
+
+  <form (ngSubmit)="addCar()" novalidate>
+    <label for="brand">Marque:</label>
+    <input type="text" id="brand" [(ngModel)]="brand" name="brand">
+    <div class="error" *ngIf="submitted && !brand">⚠️ Champ requis</div>
+
+    <label for="model">Modèle:</label>
+    <input type="text" id="model" [(ngModel)]="model" name="model">
+    <div class="error" *ngIf="submitted && !model">⚠️ Champ requis</div>
+
+    <label for="releaseDate">Date de sortie:</label>
+    <input type="date" id="releaseDate" [(ngModel)]="releaseDate" name="releaseDate">
+    <div class="error" *ngIf="submitted && !releaseDate">⚠️ Champ requis</div>
+
+    <label for="pricePerDay">Prix / jour (TND):</label>
+    <input type="number" id="pricePerDay" [(ngModel)]="pricePerDay" name="pricePerDay">
+    <div class="error" *ngIf="submitted && (!pricePerDay || pricePerDay <= 0)">⚠️ Prix invalide</div>
+
+    <label for="images">Images (max 5):</label>
+    <input type="file" id="images" (change)="onFileChange($event)" multiple accept="image/*">
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <div *ngIf="success || error" [ngClass]="{'toast': true, 'success': success, 'error': error}">
+    {{ success ? '✅ Voiture ajoutée avec succès !' : '❌ ' + error }}
+  </div>
+</div>

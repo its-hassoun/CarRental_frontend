@@ -1,0 +1,16 @@
+<header>
+  <a routerLink="/home" class="logo">Carya</a>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a routerLink="/home">Home</a></li>
+      <li><a routerLink="/cars">Cars</a></li>
+      <li><a routerLink="/about">About</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li *ngIf="userRole === 'AGENCE'">
+        <a [routerLink]="['/dashboard', agencyId]">Dashboard</a>
+      </li>
+    </ul>
+    <a href="#" (click)="logout()" class="btn-logout">Logout</a>
+  </nav>
+</header>

@@ -1,0 +1,281 @@
+.footer {
+    background-color: #252b48;
+    color: white;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section1, .section2, .section3, .section4 {
+    width: 25%; /* Each section takes 25% width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.section1 h4, .section2 h4, .section3 h4, .section4 h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.section1 p, .section2 ul li, .section4 p {
+    font-size: 14px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0073e6;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul li a:hover {
+    color: #0073e6;
+}
+
+.gallery img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.newsletter input {
+    width: calc(100% - 90px); /* Adjust the width to make room for the button */
+    padding: 10px;
+    font-size: 14px;
+}
+
+.newsletter button {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.newsletter input, .newsletter button {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.small-text {
+    font-size: 12px;
+    color: #777;
+}
+
+
+.footer h4 {
+    color: #ff9900;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+}
+
+.social-icons a:hover {
+    background-color: #ff9900;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+.newsletter {
+    display: flex;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.newsletter button {
+    background-color: #ff9900;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: #ff6600;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+/* General Styles */
+.testimonials {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Hide radio buttons */
+input[name="carousel"] {
+    display: none;
+}
+
+/* Carousel Items */
+.carousel {
+    display: flex;
+    width: 100%; /* Chaque élément prendra 100% de width */
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le contenu */
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    min-height: 250px; /* Taille minimum pour éviter l'écrasement */
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+.testimonial img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover; /* Empêche l'image de déborder */
+}
+
+
+.testimonial p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.testimonial h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Carousel Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.navigation label {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.navigation label:hover,
+/* Corrected Navigation Dots */
+.testimonials input#slide1:checked ~ .navigation label[for="slide1"],
+.testimonials input#slide2:checked ~ .navigation label[for="slide2"],
+.testimonials input#slide3:checked ~ .navigation label[for="slide3"],
+.testimonials input#slide4:checked ~ .navigation label[for="slide4"],
+.testimonials input#slide5:checked ~ .navigation label[for="slide5"] {
+    background-color: #333;
+}
+
+/* Sliding Effect */
+input#slide1:checked ~ .carousel {
+    transform: translateX(0%);
+}
+input#slide2:checked ~ .carousel {
+    transform: translateX(-100%);
+}
+input#slide3:checked ~ .carousel {
+    transform: translateX(-200%);
+}
+input#slide4:checked ~ .carousel {
+    transform: translateX(-300%);
+}
+input#slide5:checked ~ .carousel {
+    transform: translateX(-400%);
+}

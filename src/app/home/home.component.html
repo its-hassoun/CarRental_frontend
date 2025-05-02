@@ -1,0 +1,87 @@
+<body>
+    <!-- Success Pop-up -->
+    <div *ngIf="showSuccessPopup" class="success-popup">
+        <p>Login successful! Welcome back.</p>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Find Your Perfect Car Rental</h1>
+        <p>Explore our wide range of vehicles at the best prices.</p>
+        <a href="/cars" class="btn">Browse Cars</a>
+    </section>
+
+    <!-- Featured Cars -->
+    <section id="cars" class="featured-cars">
+        <h2>Featured Cars</h2>
+        <div class="car-list">
+            <div class="car">
+                <img src="/assets/images/car1.jpg" alt="Luxury Sedan">
+                <h3>Luxury Sedan</h3>
+                <p>$50/day</p>
+            </div>
+            <div class="car">
+                <img src="/assets/images/car-rent-2.jpg" alt="Sports Car">
+                <h3>Sports Car</h3>
+                <p>$80/day</p>
+            </div>
+            <div class="car">
+                <img src="/assets/images/car-rent-6.jpg" alt="SUV">
+                <h3>SUV</h3>
+                <p>$60/day</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="carousel-container">
+            <input type="radio" name="carousel" id="slide1" checked>
+            <input type="radio" name="carousel" id="slide2">
+            <input type="radio" name="carousel" id="slide3">
+            <input type="radio" name="carousel" id="slide4">
+            <input type="radio" name="carousel" id="slide5">
+
+            <div class="carousel">
+                <div class="testimonial">
+                    <img src="/assets/images/p1.jpg" alt="Sami Ayedi">
+                    <p>"The Luxury Sedan was perfect for my trip. Great experience, highly recommend!"</p>
+                    <h4>Sami Ayedi</h4>
+                    <p>Sfax, Tunisie</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/assets/images/p3.jpg" alt="Imen Louati">
+                    <p>"Fantastic service and a great selection of cars! Will definitely rent again."</p>
+                    <h4>Imen Louati</h4>
+                    <p>Sfax, Tunisie</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/assets/images/p2.jpg" alt="Ahmed Trabelsi">
+                    <p>"The SUV was spacious and comfortable for our family trip. Excellent rental service!"</p>
+                    <h4>Ahmed Trabelsi</h4>
+                    <p>Sfax, Tunisie</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/assets/images/p4.jpg" alt="Khouloud Kessentini">
+                    <p>"Highly professional service and well-maintained cars. Definitely my go-to rental company!"</p>
+                    <h4>Khouloud Kessentini</h4>
+                    <p>Sfax, Tunisie</p>
+                </div>
+                <div class="testimonial">
+                    <img src="/assets/images/p5.jpg" alt="Ghazi Kriaa">
+                    <p>"Smooth process from booking to return. The best rental experience I've had!"</p>
+                    <h4>Ghazi Kriaa</h4>
+                    <p>Sfax, Tunisie</p>
+                </div>
+            </div>
+            <div class="navigation">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+                <label for="slide5"></label>
+            </div>
+        </div>
+    </section>
+</body>

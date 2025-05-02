@@ -1,0 +1,154 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+.contact-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ff6600;
+}
+
+.contact-section p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contact-form button {
+  background-color: #ff6600;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #cc5500;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 15px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #333;
+}
+
+/* Social Icons Enhanced Style */
+.social-icons-enhanced {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icons-enhanced a.social {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.social-icons-enhanced a.social i {
+  display: inline-block;
+  line-height: 1;
+  font-size: 18px;
+}
+
+.social-icons-enhanced a.social:hover {
+  background-color: #ff6600;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.social.facebook {
+  background-color: #3b5998;
+}
+
+.social.twitter {
+  background-color: #1da1f2;
+}
+
+.social.instagram {
+  background-color: white;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+}
+
+
+.social.linkedin {
+  background-color: #0077b5;
+}
+
+.social-icons-enhanced a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

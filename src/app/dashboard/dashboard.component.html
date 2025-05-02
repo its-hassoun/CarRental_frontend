@@ -1,0 +1,29 @@
+
+<body>
+
+  <!-- Spinner pendant le chargement -->
+  <div *ngIf="isLoading" class="spinner-container">
+      <div class="spinner"></div>
+  </div>
+
+  <!-- Contenu des graphiques -->
+  <div *ngIf="!isLoading">
+    <div class="chart-row">
+      <div class="chart-container small-chart chart-margin-top">
+        <h2>Répartition des âges</h2>
+        <canvas baseChart [data]="ageHistogramData" [type]="'bar'" [options]="ageChartOptions"></canvas>
+      </div>
+
+      <div class="chart-container small-chart chart-margin-top">
+        <h2>Locations par mois</h2>
+        <canvas baseChart [data]="locationsPerMonthData" [type]="'line'" [options]="locationsChartOptions"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-container small-chart center-chart">
+      <h2>Marques de voitures</h2>
+      <canvas baseChart [data]="carBrandData" [type]="'pie'" [options]="carBrandChartOptions"></canvas>
+    </div>
+  </div>
+
+</body>
